@@ -1,0 +1,20 @@
+h2. Rails 3 templates
+
++base.rb+
+Base template
+* deletes unused files like (index.html, protorype js files)
+* adds commonly used gems and plugins
+# database (postgres sql)
+# will-paginate
+# openid
+# rspec, capybara, cucumber
+
+* initializes git
+
+<pre><code>
+  $ rails new <application name> -m http://github.com/jurgis/rails3-templates/raw/master/base.rb
+    or
+  $ rails3app <template> <application name> [more rails options]
+</code></pre>
+
+rails3app bash script could be copied into users bin directory ~/bin

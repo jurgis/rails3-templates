@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ "$1" = "" -o "$2" = "" ]; then
+  echo 'Usage: rail3sapp <template> <application name> [more rails options]'
+  echo 'Available templates:'
+  echo '* base'
+  exit 1
+fi
+
+template=$1
+appname=$2
+shift 2
+
+# change when testing
+#rails new $appname -m http://github.com/jurgis/rails3-templates/raw/master/$template.rb $@
+rails new $appname -m ~/rails/rails3-templates/$template.rb -JT $@
