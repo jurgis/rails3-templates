@@ -9,6 +9,3 @@
 run 'cp config/database.yml database.yml.example'
 
 run 'echo config/database.yml >> .gitignore'
-
-rake 'db:create'
-rake 'db:migrate'

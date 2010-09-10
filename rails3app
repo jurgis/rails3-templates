@@ -4,6 +4,10 @@ if [ "$1" = "" -o "$2" = "" ]; then
   echo 'Usage: rail3sapp <template> <application name> [more rails options]'
   echo 'Available templates:'
   echo '* base'
+	echo '--- Rails options ---'
+	echo 'The database: (sqlite3 by default)'
+	echo '-d postgresql -- if you wan to use PostgreSQL'
+	echo '-d mysql -- if you wan to use MySQL'
   exit 1
 fi
 

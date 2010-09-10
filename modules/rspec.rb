@@ -1,7 +1,7 @@
 # add rspec
 gem 'rspec', '>= 2.0.0.beta.20', :group => [:development, :test]
 gem 'rspec-rails', '>= 2.0.0.beta.20', :group => [:development, :test]
-gem 'factory_girl_rails', :group => :test
+gem 'factory_girl_rails', :group => [:development, :test]
 
 # install those gems if they are not present yet
 apply "#{@module_path}/install_gems.rb"
