@@ -7,23 +7,23 @@ gem 'rack-openid', :version => '>=0.2.1', :lib => 'rack/openid' # hack for open_
 gem 'authlogic-oid', :lib => 'authlogic_openid'
 gem 'authlogic'
 gem 'ruby-openid', :lib => 'openid'
-# Only one of them will be used
-gem 'pg'
-gem 'sqlite3-ruby', :lib => 'sqlite3'
+# # Only one of them will be used
+# gem 'pg'
+# gem 'sqlite3-ruby', :lib => 'sqlite3'
 
-gem 'webrat', :lib => false, :version => '>=0.7.0', :env => :test
+# gem 'webrat', :lib => false, :version => '>=0.7.0', :env => :test
 # required by cucumber (should be defined as depenency in cucumber or cucumber-rails)
-gem 'database_cleaner', :lib => false, :version => ">= 0.5.0", :env => :test
-gem 'cucumber', :lib => false, :version => '>=0.6.3', :env => :test
-gem 'cucumber-rails', :lib => false, :version => '>=0.3.0', :env => :test
-gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :version => '>=1.2.2',  :source => 'http://gems.github.com', :env => :test
+# gem 'database_cleaner', :lib => false, :version => ">= 0.5.0", :env => :test
+# gem 'cucumber', :lib => false, :version => '>=0.6.3', :env => :test
+# gem 'cucumber-rails', :lib => false, :version => '>=0.3.0', :env => :test
+# gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :version => '>=1.2.2',  :source => 'http://gems.github.com', :env => :test
 
 # Add plugins as git submodules
 plugin 'open_id_authentication', :git => 'git://github.com/rails/open_id_authentication.git', :submodule => true
 
 
 # Run required generators
-generate 'cucumber', '--webrat'
+# generate 'cucumber', '--webrat'
 
 # Run required rake tasks
 rake 'db:create'
