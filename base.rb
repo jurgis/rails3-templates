@@ -2,7 +2,7 @@
 
 @module_path = "http://github.com/jurgis/rails3-templates/raw/master/modules"
 # uncoment when testing
-@module_path = "~/rails/rails3-templates/modules"
+# @module_path = "~/rails/rails3-templates/modules"
 
 # ---------------------------------------------------------------------------
 

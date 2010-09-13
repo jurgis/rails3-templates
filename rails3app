@@ -16,5 +16,5 @@ appname=$2
 shift 2
 
 # change when testing
-#rails new $appname -m http://github.com/jurgis/rails3-templates/raw/master/$template.rb $@
-rails new $appname -m ~/rails/rails3-templates/$template.rb -JT $@
+rails new $appname -m http://github.com/jurgis/rails3-templates/raw/master/$template.rb -JT $@
+# rails new $appname -m ~/rails/rails3-templates/$template.rb -JT $@
