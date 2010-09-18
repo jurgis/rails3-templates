@@ -1,31 +1,33 @@
 # Generate a layout
-# gem 'nifty-generators', '>= 0.4.0', :require => nil, :group => :development
 
-# Uncomment when fixed
-# gem 'web-app-theme-rails', '>= 0.1.0', :require => nil, :group => :development
-
-# Uncomment when testing
-# gem 'web-app-theme-rails', :require => nil, :group => :development, :path => '~/rails/web-app-theme-rails'
-gem 'web-app-theme-rails', :require => nil, :group => :development, :git => 'git://github.com/jurgis/web-app-theme-rails.git'
+# this version is also used later
+install_theme_version = '0.8.2'
+gem 'install_theme', install_theme_version
 
 # install those gems if they are not present yet
 apply "#{@module_path}/install_gems.rb"
 
 # Change template engine for generators in config/application.rb file
-config_generators = <<-EOT
+# config_generators = <<-EOT
+# 
+#     config.generators do |g|
+#       g.template_engine "web_app_theme"
+#     end
+# EOT
+# environment config_generators
 
-    config.generators do |g|
-      g.template_engine "web_app_theme"
-    end
-EOT
-environment config_generators
 
-# generate 'nifty:layout', '--force'
-generate 'web_app_theme:layout', '--force'
+# Add the boxie-admin theme from install_theme/spec/fixtures directory
+# `which install_theme` returns the path of install_theme bin file: ~/.rvm/gems/ruby-1.9.2-p0/bin/install_theme (plus newline char)
+theme_dir =  `which install_theme`.rstrip + "/../../gems/install_theme-#{install_theme_version}/spec/fixtures/boxie-admin"
+if Dir.exists?(theme_dir)
+  git :rm => 'app/views/layouts/application.html.erb' # remove the application layout otherwise install_theme asks for user input (which is not seen)
+  run "install_theme . #{theme_dir}"
+end
 
 # generate welcome controller which will choose a proper locale and redirect to another controller later
 # and will be used right now to display application theme
-generate 'controller', 'welcome index'
+generate 'controller', 'welcome theme'
 
 # Add the default route
-route "root :to => 'welcome#index'"
+route "root :to => 'welcome#theme'"

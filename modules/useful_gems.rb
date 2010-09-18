@@ -8,7 +8,7 @@ gem 'inherited_resources_views', '0.3.0'
 gem 'formtastic', '1.1.0'
 gem 'validation_reflection', '0.3.8'
 
-gem 'annotate', '>= 2.4.0'
+gem 'annotate', '>= 2.4.0', :group => :development
 
 # install those gems if they are not present yet
 apply "#{@module_path}/install_gems.rb"

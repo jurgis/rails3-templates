@@ -1,6 +1,6 @@
 # add rspec
-gem 'rspec', '>= 2.0.0.beta.20', :group => [:development, :test]
-gem 'rspec-rails', '>= 2.0.0.beta.20', :group => [:development, :test]
+gem 'rspec', '>= 2.0.0.beta.22', :group => [:development, :test]
+gem 'rspec-rails', '>= 2.0.0.beta.22', :group => [:development, :test]
 gem 'factory_girl_rails', :group => [:development, :test]
 # factory girl generators are not yet in factory_girl_rails gem
 gem 'rails3-generators', :group => :development
